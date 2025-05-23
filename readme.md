@@ -1,0 +1,1 @@
+Necessário um banco de dados MySQL para usar o programa
