@@ -18,3 +18,4 @@ def fechar_banco_dados(banco_de_dados):
     banco_de_dados[0].close()
     banco_de_dados[1].close()
     sys.exit(0)
+
