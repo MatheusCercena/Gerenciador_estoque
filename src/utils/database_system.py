@@ -1,5 +1,4 @@
 from mysql.connector import connect
-import sys
 
 def conectar_ao_servidor(host, user, password, database):
     banco_de_dados = connect(
@@ -17,5 +16,10 @@ def conectar_ao_servidor(host, user, password, database):
 def fechar_banco_dados(banco_de_dados):
     banco_de_dados[0].close()
     banco_de_dados[1].close()
-    sys.exit(0)
 
+HOST = 'localhost'
+USER = 'root'
+PASSWORD = '1234'
+DATABASE = 'sale'
+
+banco_de_dados = conectar_ao_servidor(HOST, USER, PASSWORD, DATABASE)

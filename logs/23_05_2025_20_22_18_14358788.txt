@@ -1,0 +1,12 @@
+
+ID operação = 
+Data / hora 23_05_2025_20_22_18 
+Produto = Teste
+ID do produto = 5
+Valor Original = 850.00 R$
+Desconto [%] = 0.0
+Valor de venda com desconto = 850.0 R$
+Unidades vendidas = 1 un
+Unidades restantes em estoque = 5 un
+Valor total da venda = 850.0 R$
+        
