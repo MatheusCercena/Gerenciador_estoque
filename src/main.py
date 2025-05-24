@@ -9,6 +9,7 @@ from interacao_usuario.solicitacoes import solicitar_produto, exibir_lista_de_it
 from interacao_usuario.mensagens import msg_menu, msg_confirmação_limpar_estoque
 from data.dumps import exportar_csv
 import sys
+from time import sleep
 
 while True:
     print(msg_menu)
@@ -100,6 +101,10 @@ while True:
         exportar_csv()
 
     else: #Sair
+        print('Você clicou em "Sair", fechando em: ')
+        for c in range(5, 0, -1):
+            print(c)
+            sleep(1)
         fechar_banco_dados(banco_de_dados)
         sys.exit(0)
     
