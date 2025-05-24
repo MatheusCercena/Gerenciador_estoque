@@ -1,4 +1,3 @@
-Com certeza! Aqui está uma sugestão de README que você pode usar para o seu repositório. Ele inclui informações sobre o propósito do projeto, a necessidade do servidor SQL e como executá-lo.
 Gerenciador de Estoque
 
 Este é um projeto simples de gerenciamento de estoque desenvolvido como parte da disciplina de Programação Estruturada do curso de Ciência da Computação. O programa foi inicialmente concebido para ser executado via terminal, oferecendo funcionalidades básicas para controlar produtos em um estoque, como adição, visualização, atualização e remoção de itens.
