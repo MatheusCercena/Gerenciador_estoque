@@ -1,3 +1,7 @@
+'''
+Mensagens padrão que são longas e podem poluir o código, de forma que ficam em um módulo separado
+'''
+
 msg_menu = f'''
 ----------------------
 Bem vindo:

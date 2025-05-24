@@ -1,3 +1,7 @@
+'''
+Funçoes para solicitar ou validar inputs do usuário.
+'''
+
 from utils.buscar_dados import listar_itens
 
 def solicitar_produto(frase: str):

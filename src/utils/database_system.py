@@ -1,3 +1,7 @@
+'''
+Funcões principais referente a conexão ao servidor MySQL
+'''
+
 from mysql.connector import connect
 
 def conectar_ao_servidor(host, user, password, database):

@@ -1,11 +1,14 @@
+'''
+exibe o menu ciclicamente por condição WHILE de acordo com a opção selecionada pelo usuário
+'''
+
 from utils.database_system import fechar_banco_dados, banco_de_dados
 from utils.alterar_banco import adicionar_produtos, retirar_produtos, alterar_estoque, vender_item, limpar_estoque
 from utils.buscar_dados import pegar_ID, propriedades_produto, valor_em_estoque
 from interacao_usuario.solicitacoes import solicitar_produto, exibir_lista_de_items, solicitar_opcao_numerica, validar_float, validar_int
 from interacao_usuario.mensagens import msg_menu, msg_confirmação_limpar_estoque
+from data.dumps import exportar_csv
 import sys
-
-# Começo do Menu
 
 while True:
     print(msg_menu)
@@ -94,7 +97,7 @@ while True:
             limpar_estoque()
             print('Operação realizada com sucesso.')
     elif opcao == 8: #Exportar como planilha (csv)
-        print('Função em desenvolvimento')
+        exportar_csv()
 
     else: #Sair
         fechar_banco_dados(banco_de_dados)

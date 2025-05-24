@@ -1,3 +1,7 @@
+''''
+Principais funções responsáveis por manipular o banco de dados.
+'''
+
 from utils.database_system import banco_de_dados
 from utils.buscar_dados import propriedades_produto
 from data.dumps import armazenar_registro_venda

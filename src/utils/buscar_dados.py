@@ -1,3 +1,7 @@
+'''
+Funções para buscar dados do banco de dados, que podem ser úteis para outras funções.
+'''
+
 from utils.database_system import banco_de_dados
 
 cursor = banco_de_dados[1]
