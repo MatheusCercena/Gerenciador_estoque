@@ -24,13 +24,12 @@ Crie um banco de dados no seu servidor MySQL. Você pode nomeá-lo como preferir
 
 Crie a tabela products dentro deste banco de dados. A estrutura da tabela deve ser similar a esta:
 
-    CREATE TABLE products (
-id INT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(255) NOT NULL,
-price DECIMAL(10, 2) NOT NULL,
-quantity INT NOT NULL
-);
-```
+        CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    quantity INT NOT NULL
+    );
 
 Atualize as credenciais de conexão no arquivo main.py (ou onde sua conexão com o banco de dados estiver configurada) para corresponder às suas informações de usuário, senha, host e nome do banco de dados MySQL.
 
