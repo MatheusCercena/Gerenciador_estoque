@@ -45,24 +45,7 @@ Atualize as credenciais de conexão no arquivo main.py (ou onde sua conexão com
 
 Como Executar
 
-Clone o repositório:
-
-    Bash
-
-    git clone https://github.com/MatheusCercena/Gerenciador_estoque.git
-    cd Gerenciador_estoque
-
-Instale as dependências:
-
-    Bash
-
-    pip install mysql-connector-python
-
-Execute o programa:
-
-    Bash
-
-    python main.py
+Em dist/, execute main.exe
 
 Próximos Passos (Desenvolvimento Futuro)
 

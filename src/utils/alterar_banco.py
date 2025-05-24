@@ -2,9 +2,9 @@
 Principais funções responsáveis por manipular o banco de dados.
 '''
 
-from utils.database_system import banco_de_dados
-from utils.buscar_dados import propriedades_produto
-from data.dumps import armazenar_registro_venda
+from src.utils.database_system import banco_de_dados
+from src.utils.buscar_dados import propriedades_produto
+from src.data.dumps import armazenar_registro_venda
 
 cursor = banco_de_dados[1]
 
