@@ -1,4 +1,4 @@
-Gerenciador de Estoque
+GERENCIADOR DE ESTOQUE
 
 Este é um projeto simples de gerenciamento de estoque desenvolvido como parte da disciplina de Programação Estruturada do curso de Ciência da Computação. O programa foi inicialmente concebido para ser executado via terminal, oferecendo funcionalidades básicas para controlar produtos em um estoque, como adição, visualização, atualização e remoção de itens.
 Funcionalidades Atuais
@@ -8,7 +8,7 @@ Funcionalidades Atuais
     Atualizar Produtos: Possibilita a modificação de detalhes de um produto existente.
     Remover Produtos: Permite a exclusão de produtos do estoque.
 
-Requisitos e Configuração
+REQUISITOS E CONFIGURAÇÕES
 
 Para que este programa funcione corretamente, é essencial ter um servidor MySQL instalado e em execução. O sistema utiliza um banco de dados MySQL para persistir todas as informações do estoque.
 Pré-requisitos
@@ -18,11 +18,11 @@ Pré-requisitos
     Bibliotecas Python:
         mysql-connector-python
 
-Configuração do Banco de Dados
+CONFIGURAÇÃO DO BANCO DE DADOS
 
-    Crie um banco de dados no seu servidor MySQL. Você pode nomeá-lo como preferir, por exemplo, gerenciador_estoque.
+Crie um banco de dados no seu servidor MySQL. Você pode nomeá-lo como preferir, por exemplo, gerenciador_estoque.
 
-    Crie a tabela products dentro deste banco de dados. A estrutura da tabela deve ser similar a esta:
+Crie a tabela products dentro deste banco de dados. A estrutura da tabela deve ser similar a esta:
 
     CREATE TABLE products (
 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -32,7 +32,8 @@ quantity INT NOT NULL
 );
 ```
 
-    Atualize as credenciais de conexão no arquivo main.py (ou onde sua conexão com o banco de dados estiver configurada) para corresponder às suas informações de usuário, senha, host e nome do banco de dados MySQL.
+Atualize as credenciais de conexão no arquivo main.py (ou onde sua conexão com o banco de dados estiver configurada) para corresponder às suas informações de usuário, senha, host e nome do banco de dados MySQL.
+
     Python
 
     # Exemplo de conexão (ajuste conforme sua configuração)
@@ -45,19 +46,22 @@ quantity INT NOT NULL
 
 Como Executar
 
-    Clone o repositório:
+Clone o repositório:
+
     Bash
 
-git clone https://github.com/MatheusCercena/Gerenciador_estoque.git
-cd Gerenciador_estoque
+    git clone https://github.com/MatheusCercena/Gerenciador_estoque.git
+    cd Gerenciador_estoque
 
 Instale as dependências:
-Bash
 
-pip install mysql-connector-python
+    Bash
+
+    pip install mysql-connector-python
 
 Execute o programa:
-Bash
+
+    Bash
 
     python main.py
 
