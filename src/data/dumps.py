@@ -36,7 +36,7 @@ Valor total da venda = {valor*quantidade_venda} R$
     try:
         with open(full_path, 'w', encoding='utf-8') as log:
             log.write(conteudo_log)
-        print(f'Registro da venda armazenado em {full_path}')
+        print(f'Registro da venda armazenado na pasta logs dentro da pasta do programa')
     except:
         print('Erro ao armazenar Registro da venda na pasta logs')
 
@@ -61,6 +61,5 @@ def exportar_csv():
         escritor_csv.writerow(cabecalho)
         escritor_csv.writerows(banco)
 
-        print(f'A listagem de estoque foi exportada com sucesso, em {full_path}. \n')
-
+        print(f'A listagem de estoque foi exportada com sucesso, na pasta CSV dentro da pasta do programa. \n')
 

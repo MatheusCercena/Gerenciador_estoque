@@ -118,5 +118,6 @@ while True:
             sleep(1)
         fechar_banco_dados(banco_de_dados)
         sys.exit(0)
-    
+
+        
     input(f'Para voltar ao {YELLOW}menu-principal{RESET} (digite qualquer tecla): ')

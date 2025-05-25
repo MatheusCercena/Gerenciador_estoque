@@ -25,10 +25,12 @@ def verificar_conexao(banco_de_dados):
     else:
         return False
 
+def criar_banco():
+    HOST = 'localhost'
+    USER = 'root'
+    PASSWORD = '1234'
+    global DATABASE
+    DATABASE = 'sale'
 
-HOST = 'localhost'
-USER = 'root'
-PASSWORD = '1234'
-DATABASE = 'sale'
-
-banco_de_dados = conectar_ao_servidor(HOST, USER, PASSWORD, DATABASE)
+    global banco_de_dados
+    banco_de_dados = conectar_ao_servidor(HOST, USER, PASSWORD, DATABASE)

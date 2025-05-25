@@ -1,3 +1,0 @@
-'''
-Modulos da interface
-'''

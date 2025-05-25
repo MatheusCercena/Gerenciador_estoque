@@ -37,12 +37,12 @@ def exibir_verificador_de_conexao():
     if verificador_conexao[0] == False:
         print(f'{'\033[31m'}Erro ao conectar ao banco de dados: {verificador_conexao[1]}.{'\033[0m'}')
 
-def definir_verificador_de_conexao():
+def status_da_conexao():
     verificador_conexao = verificar_conexao(banco_de_dados)
     if verificador_conexao[0] == True:
-        return f'{'\033[32m'}Conectado ao banco de dados: {verificador_conexao[1]}.{'\033[0m'}'
+        return f'Conectado ao banco de dados: {verificador_conexao[1]}.'
     if verificador_conexao[0] == False:
-        return f'{'\033[31m'}Erro ao conectar ao banco de dados: {verificador_conexao[1]}.{'\033[0m'}'
+        return f'Erro ao conectar ao banco de dados: {verificador_conexao[1]}.'
 
 
 def exibir_lista_de_items():

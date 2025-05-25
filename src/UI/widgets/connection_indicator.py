@@ -1,12 +1,9 @@
-from PyQt6.QtWidgets import QWidget, QLabel
-from utils.exibicoes import definir_verificador_de_conexao
+from PyQt6.QtWidgets import QLabel
+from utils.exibicoes import status_da_conexao
 
-indicador_conexao = QWidget
+texto = status_da_conexao()
 
-
-texto = definir_verificador_de_conexao()
-
-texto_indicador = QLabel(texto)
-
-indicador_conexao.setLayout(texto_indicador)
+class indicator(QLabel):
+    def __init__(self):
+        super().__init__(texto)
 
