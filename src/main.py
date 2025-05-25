@@ -5,8 +5,8 @@ exibe o menu ciclicamente por condição WHILE de acordo com a opção seleciona
 from utils.database_system import fechar_banco_dados, banco_de_dados
 from utils.alterar_banco import adicionar_produtos, retirar_produtos, alterar_estoque, vender_item, limpar_estoque
 from utils.buscar_dados import pegar_ID, propriedades_produto, valor_em_estoque
-from utils.inputs import solicitar_produto, exibir_lista_de_items, solicitar_opcao_numerica, validar_float, validar_int
-from utils.exibicoes import exibir_verificador_de_conexao, msg_menu, msg_confirmação_limpar_estoque
+from utils.inputs import validar_float, validar_int, solicitar_produto, solicitar_opcao_numerica
+from utils.exibicoes import exibir_verificador_de_conexao, exibir_lista_de_items, msg_menu, msg_confirmação_limpar_estoque
 from data.dumps import exportar_csv
 from utils.cores import RESET, YELLOW
 
@@ -32,7 +32,9 @@ while True:
 
     elif opcao == 2: #Retirar produtos do estoque
         exibir_lista_de_items()
-        produto = solicitar_produto('Qual produto deseja remover? ')
+        produto = solicitar_produto('remover')
+        if produto == False:
+            break
         verificacao = input(f'Você irá remover o produto {produto}, deseja continuar [digite enter para SIM qualquer outra tecla para NÃO]: ')
         if verificacao == '' :
             retirar_produtos(produto)
@@ -40,7 +42,9 @@ while True:
 
     elif opcao == 3: #Alterar produtos em estoque
         exibir_lista_de_items()
-        produto = solicitar_produto('Qual produto deseja alterar? ')
+        produto = solicitar_produto('alterar')
+        if produto == False:
+            break
         id = pegar_ID(produto)
         prod_data = propriedades_produto(id)
 
@@ -82,7 +86,9 @@ while True:
 
     elif opcao == 4: #Vender item
         exibir_lista_de_items()
-        produto = solicitar_produto('Qual produto deseja vender? ')
+        produto = solicitar_produto('vender')
+        if produto == False:
+            break
         id = pegar_ID(produto)
         prod_data = propriedades_produto(id)
         quantidade_venda = validar_int(input(f'Há {prod_data["quantidade"]} unidades no estoque. Quantas unidades serão vendidas? '))
@@ -107,7 +113,7 @@ while True:
 
     else: #Sair
         print('Você clicou em "Sair", fechando em: ')
-        for c in range(5, 0, -1):
+        for c in range(3, 0, -1):
             print(c)
             sleep(1)
         fechar_banco_dados(banco_de_dados)

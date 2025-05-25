@@ -1,0 +1,13 @@
+
+REGISTRO DE VENDA
+ID operação = 40179714
+Data / hora 24_05_2025_21_38_52 
+Produto = Teste
+ID do produto = 5
+Valor Original = 850.00 R$
+Desconto [%] = 0.0
+Valor de venda com desconto = 850.0 R$
+Unidades vendidas = 1 un
+Unidades restantes em estoque = 4 un
+Valor total da venda = 850.0 R$
+        

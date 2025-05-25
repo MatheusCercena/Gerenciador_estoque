@@ -21,17 +21,28 @@ def validar_int(valor):
         except:
             valor = input(f'{RED}[ERRO]{RESET} digite um número inteiro: ' )
 
+def solicitar_produto(acao: str):
+    '''
+    acao: indica qual ação será questionada ao usuário, valida se o produto existe
+    '''
+    produto = input(f'Qual produto deseja {acao}?: ')
+    if validar_produto(produto) == True:
+        return produto
+    else:
+        return False
 
-def solicitar_produto(frase: str):
+
+def validar_produto(produto):
     produtos_disponiveis = []
-    [produtos_disponiveis.append(linha[1]) for linha in listar_itens()]
+    for linha in listar_itens():
+        produtos_disponiveis.append(linha[1])
 
     while True:
-        produto = input(frase)
         if produto in produtos_disponiveis:
-            return produto
+            return True
         else:
             print(f'{RED}Produto inexistente.{RESET} Asseguresse de digitar o nome exato que o produto foi cadastrado no estoque.')
+            return False
 
 
 def solicitar_opcao_numerica(opcoes: list):
@@ -46,20 +57,3 @@ def solicitar_opcao_numerica(opcoes: list):
     return opcao
 
 
-def exibir_lista_de_items():
-    '''
-    Imprime uma lista formatada com os itens da tabela do banco de dados, usando listar_itens() para buscar os dados
-    '''
-    lista_de_itens = listar_itens()
-
-    tabela = []
-    for linha in lista_de_itens:
-        texto = f'ID: {linha[0]: >10} | Produto: {linha[1]: >25} | Valor: {linha[2]: >10} R$ | Qntd em estoque: {linha[3]: >10}'
-        tabela.append(texto)
-    print('')
-    print(f'LISTA DE PRODUTOS:'.center(len(tabela[0])))
-    print('') 
-    for linha in tabela:
-        print(linha)
-        print('- '*int(len(tabela[0])/2+1))
-    print('')

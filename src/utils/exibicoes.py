@@ -3,6 +3,7 @@ Mensagens padrão que são longas e podem poluir o código, de forma que ficam e
 '''
 
 from utils.cores import RED, RESET
+from utils.buscar_dados import listar_itens
 from utils.database_system import verificar_conexao, banco_de_dados
 
 msg_menu = f'''
@@ -35,3 +36,29 @@ def exibir_verificador_de_conexao():
         print(f'{'\033[32m'}Conectado ao banco de dados: {verificador_conexao[1]}.{'\033[0m'}')
     if verificador_conexao[0] == False:
         print(f'{'\033[31m'}Erro ao conectar ao banco de dados: {verificador_conexao[1]}.{'\033[0m'}')
+
+def definir_verificador_de_conexao():
+    verificador_conexao = verificar_conexao(banco_de_dados)
+    if verificador_conexao[0] == True:
+        return f'{'\033[32m'}Conectado ao banco de dados: {verificador_conexao[1]}.{'\033[0m'}'
+    if verificador_conexao[0] == False:
+        return f'{'\033[31m'}Erro ao conectar ao banco de dados: {verificador_conexao[1]}.{'\033[0m'}'
+
+
+def exibir_lista_de_items():
+    '''
+    Imprime uma lista formatada com os itens da tabela do banco de dados, usando listar_itens() para buscar os dados
+    '''
+    lista_de_itens = listar_itens()
+
+    tabela = []
+    for linha in lista_de_itens:
+        texto = f'ID: {linha[0]: >10} | Produto: {linha[1]: >25} | Valor: {linha[2]: >10} R$ | Qntd em estoque: {linha[3]: >10}'
+        tabela.append(texto)
+    print('')
+    print(f'LISTA DE PRODUTOS:'.center(len(tabela[0])))
+    print('') 
+    for linha in tabela:
+        print(linha)
+        print('- '*int(len(tabela[0])/2+1))
+    print('')
