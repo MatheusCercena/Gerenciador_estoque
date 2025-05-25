@@ -6,7 +6,7 @@ import os
 import csv
 from datetime import datetime
 from random import randint
-from src.utils.buscar_dados import listar_itens
+from utils.buscar_dados import listar_itens
 
 
 def armazenar_registro_venda(prod_data, id, preco, desconto, valor, quantidade_venda, quantidade_restante):

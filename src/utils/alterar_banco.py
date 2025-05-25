@@ -2,9 +2,9 @@
 Principais funções responsáveis por manipular o banco de dados.
 '''
 
-from src.utils.database_system import banco_de_dados
-from src.utils.buscar_dados import propriedades_produto
-from src.data.dumps import armazenar_registro_venda
+from utils.database_system import banco_de_dados
+from utils.buscar_dados import propriedades_produto
+from data.dumps import armazenar_registro_venda
 
 cursor = banco_de_dados[1]
 
@@ -20,7 +20,6 @@ def retirar_produtos(name):
                 DELETE FROM products WHERE products.name = '{name}'
                 ''')
     banco_de_dados[0].commit()
-        
 
 def vender_item(id, preco, desconto, quantidade_venda):
     prod_data = propriedades_produto(id)

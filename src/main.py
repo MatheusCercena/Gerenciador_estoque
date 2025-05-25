@@ -2,16 +2,21 @@
 exibe o menu ciclicamente por condição WHILE de acordo com a opção selecionada pelo usuário
 '''
 
-from src.utils.database_system import fechar_banco_dados, banco_de_dados
-from src.utils.alterar_banco import adicionar_produtos, retirar_produtos, alterar_estoque, vender_item, limpar_estoque
-from src.utils.buscar_dados import pegar_ID, propriedades_produto, valor_em_estoque
-from src.interacao_usuario.solicitacoes import solicitar_produto, exibir_lista_de_items, solicitar_opcao_numerica, validar_float, validar_int
-from src.interacao_usuario.mensagens import msg_menu, msg_confirmação_limpar_estoque
-from src.data.dumps import exportar_csv
+from utils.database_system import fechar_banco_dados, banco_de_dados
+from utils.alterar_banco import adicionar_produtos, retirar_produtos, alterar_estoque, vender_item, limpar_estoque
+from utils.buscar_dados import pegar_ID, propriedades_produto, valor_em_estoque
+from utils.inputs import solicitar_produto, exibir_lista_de_items, solicitar_opcao_numerica, validar_float, validar_int
+from utils.exibicoes import exibir_verificador_de_conexao, msg_menu, msg_confirmação_limpar_estoque
+from data.dumps import exportar_csv
+from utils.cores import RESET, YELLOW
+
 import sys
 from time import sleep
 
 while True:
+
+    exibir_verificador_de_conexao()
+
     print(msg_menu)
 
     opcoes = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -108,4 +113,4 @@ while True:
         fechar_banco_dados(banco_de_dados)
         sys.exit(0)
     
-    input('Voltar ao menu-principal (digite qualquer tecla): ')
+    input(f'Para voltar ao {YELLOW}menu-principal{RESET} (digite qualquer tecla): ')
