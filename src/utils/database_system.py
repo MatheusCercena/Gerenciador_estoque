@@ -26,10 +26,14 @@ def verificar_conexao(banco_de_dados):
         return False
 
 def criar_banco():
+    global HOST
+    global USER
+    global PASSWORD
+    global DATABASE
+
     HOST = 'localhost'
     USER = 'root'
     PASSWORD = '1234'
-    global DATABASE
     DATABASE = 'sale'
 
     global banco_de_dados

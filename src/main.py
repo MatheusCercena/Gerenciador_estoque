@@ -1,5 +1,5 @@
 '''
-exibe o menu ciclicamente por condição WHILE de acordo com a opção selecionada pelo usuário
+exibe o menu ciclicamente de acordo com a opção selecionada pelo usuário
 '''
 
 from utils.database_system import fechar_banco_dados, banco_de_dados
