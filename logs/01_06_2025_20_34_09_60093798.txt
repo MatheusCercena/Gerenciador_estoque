@@ -1,0 +1,13 @@
+
+REGISTRO DE VENDA
+ID operação = 60093798
+Data / hora 01_06_2025_20_34_09 
+Produto = Carrinho de mao
+ID do produto = 6
+Valor Original = 400.00 R$
+Desconto [%] = 0.0
+Valor de venda com desconto = 400.0 R$
+Unidades vendidas = 1 un
+Unidades restantes em estoque = 1 un
+Valor total da venda = 400.0 R$
+        

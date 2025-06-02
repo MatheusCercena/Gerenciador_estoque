@@ -2,9 +2,9 @@
 Mensagens padrão que são longas e podem poluir o código, de forma que ficam em um módulo separado
 '''
 
+from db.db import get_connection
 from utils.cores import RED, RESET
-from utils.buscar_dados import listar_itens
-from utils.database_system import verificar_conexao, banco_de_dados
+from estoque.buscar_dados import listar_itens
 
 msg_menu = f'''
 ----------------------
@@ -24,25 +24,28 @@ O que deseja fazer?
 ----------------------
 '''
 
+
 msg_confirmação_limpar_estoque = f'''{RED}
 Deseja realmente deletar todos os items do estoque? 
 Digite exatamente a frase a abaixo para confirmar \n
 Estou ciente de que é uma ação irreverssível: \n
 {RESET}'''
 
+
 def exibir_verificador_de_conexao():
-    verificador_conexao = verificar_conexao(banco_de_dados)
-    if verificador_conexao[0] == True:
-        print(f'{'\033[32m'}Conectado ao banco de dados: {verificador_conexao[1]}.{'\033[0m'}')
-    if verificador_conexao[0] == False:
-        print(f'{'\033[31m'}Erro ao conectar ao banco de dados: {verificador_conexao[1]}.{'\033[0m'}')
+    conexao = get_connection()
+    if conexao.is_connected() == True:
+        print(f'{'\033[32m'}Conectado ao banco de dados.{'\033[0m'}')
+    if conexao.is_connected() == False:
+        print(f'{'\033[31m'}Erro ao conectar ao banco de dados.{'\033[0m'}')
+
 
 def status_da_conexao():
-    verificador_conexao = verificar_conexao(banco_de_dados)
-    if verificador_conexao[0] == True:
-        return f'Conectado ao banco de dados: {verificador_conexao[1]}.'
-    if verificador_conexao[0] == False:
-        return f'Erro ao conectar ao banco de dados: {verificador_conexao[1]}.'
+    conexao = get_connection()
+    if conexao.is_connected() == True:
+        return f'Conectado ao banco de dados.'
+    if conexao.is_connected() == False:
+        return f'Erro ao conectar ao banco de dados.'
 
 
 def exibir_lista_de_items():
@@ -62,3 +65,4 @@ def exibir_lista_de_items():
         print(linha)
         print('- '*int(len(tabela[0])/2+1))
     print('')
+

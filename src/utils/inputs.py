@@ -2,7 +2,7 @@
 Funçoes para solicitar ou validar inputs do usuário.
 '''
 
-from utils.buscar_dados import listar_itens
+from estoque.buscar_dados import listar_itens
 from utils.cores import RED, RESET
 
 def validar_float(valor):
@@ -11,7 +11,7 @@ def validar_float(valor):
             valor = float(valor)
             return valor
         except:
-            valor = input(f'{RED}[ERRO]{RESET} digite apenas números: ' )
+            valor = input(f'{RED}[Valor inválido]{RESET} digite apenas números: ' )
 
 def validar_int(valor):
     while True:
@@ -19,7 +19,7 @@ def validar_int(valor):
             valor = int(valor)
             return valor
         except:
-            valor = input(f'{RED}[ERRO]{RESET} digite um número inteiro: ' )
+            valor = input(f'{RED}[Valor inválido]{RESET} digite um número inteiro: ' )
 
 def solicitar_produto(acao: str):
     '''
@@ -30,7 +30,7 @@ def solicitar_produto(acao: str):
         return produto
     else:
         return False
-
+    
 
 def validar_produto(produto):
     produtos_disponiveis = []

@@ -1,3 +1,3 @@
 '''
-Principais funcoes lógicas do projeto
+Funçoes úteis para outros modulos.
 '''

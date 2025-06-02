@@ -1,14 +1,14 @@
-from utils.database_system import criar_banco #inicia o banco de dados, importar este e executar OBRIGATORIAMENTE antes dos outros modulos
+from db.db import get_connection #inicia o banco de dados, importar este e executar OBRIGATORIAMENTE antes dos outros modulos
 
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QGridLayout, QVBoxLayout, QLabel
 from PyQt6.QtCore import Qt, QSize
 
-criar_banco()
+get_connection()
 
-from UI.widgets.connection_indicator import IndicadorConexao
-from UI.widgets.menu import MenuVertical
-from UI.widgets.table import TabelaEstoque
+from UI.connection_indicator import IndicadorConexao
+from UI.menu import MenuVertical
+from UI.table import TabelaEstoque
 
 class MainWindow(QMainWindow):
     def __init__(self):

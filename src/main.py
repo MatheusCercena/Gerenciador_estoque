@@ -2,19 +2,18 @@
 exibe o menu ciclicamente de acordo com a opção selecionada pelo usuário
 '''
 
-from utils.database_system import fechar_banco_dados, banco_de_dados
-from utils.alterar_banco import adicionar_produtos, retirar_produtos, alterar_estoque, vender_item, limpar_estoque
-from utils.buscar_dados import pegar_ID, propriedades_produto, valor_em_estoque
+from db.db import get_connection 
+from estoque.alterar_banco import adicionar_produtos, retirar_produtos, alterar_estoque, vender_item, limpar_estoque
+from estoque.buscar_dados import pegar_ID, propriedades_produto, valor_em_estoque
 from utils.inputs import validar_float, validar_int, solicitar_produto, solicitar_opcao_numerica
 from utils.exibicoes import exibir_verificador_de_conexao, exibir_lista_de_items, msg_menu, msg_confirmação_limpar_estoque
-from data.dumps import exportar_csv
+from data.exports import exportar_csv
 from utils.cores import RESET, YELLOW
 
 import sys
 from time import sleep
 
 while True:
-
     exibir_verificador_de_conexao()
 
     print(msg_menu)
@@ -38,7 +37,7 @@ while True:
         verificacao = input(f'Você irá remover o produto {produto}, deseja continuar [digite enter para SIM qualquer outra tecla para NÃO]: ')
         if verificacao == '' :
             retirar_produtos(produto)
-        print('Operação realizada com sucesso.')
+        print(f'Operação realizada com sucesso. {produto.capitalize()} foi removido do estoque')
 
     elif opcao == 3: #Alterar produtos em estoque
         exibir_lista_de_items()
@@ -82,7 +81,6 @@ while True:
               ANTIGO Nome: {prod_data['nome']}| Valor: {prod_data['preco']} R$ | Quantidade: {prod_data['quantidade']}
               NOVO Nome: {new_data['nome']}| Valor: {new_data['preco']} R$ | Quantidade: {new_data['quantidade']}
               ''')
-        print('Operação realizada com sucesso.')
 
     elif opcao == 4: #Vender item
         exibir_lista_de_items()
@@ -95,7 +93,7 @@ while True:
         desconto = validar_float(input(f'O valor do produto é {prod_data['preco']}. Qual será o desconto? [%] '))
 
         vender_item(id, prod_data['preco'], desconto, quantidade_venda)
-        print('Operação realizada com sucesso.')
+        print(f'Operação realizada com sucesso. {produto.capitalize()} foi vendido por {prod_data['preco']}. ')
 
     elif opcao == 5: #Mostrar itens
         exibir_lista_de_items()
@@ -116,7 +114,6 @@ while True:
         for c in range(3, 0, -1):
             print(c)
             sleep(1)
-        fechar_banco_dados(banco_de_dados)
         sys.exit(0)
 
         
